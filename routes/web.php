@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AkunAdmin_C;
 use App\Http\Controllers\inspirasi_post_c;
 use App\Http\Controllers\InspirasiUserController;
+use App\Http\Controllers\ProductController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -42,3 +44,5 @@ Route::get('/akunadmin',[AkunAdmin_C::class,'index']);
 Route::get('/inspirasipost',[inspirasi_post_c::class,'index']);
 
 Route::get('/inspirasiuser', [InspirasiUserController::class,'index']);
+
+Route::get('/produk', [ProductController::class,'index']);

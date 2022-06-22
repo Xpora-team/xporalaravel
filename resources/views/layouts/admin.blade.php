@@ -88,7 +88,7 @@
         </li>
 
          <!-- Nav Item -->
-         <li class="nav-item {{ Nav::isRoute('blank') }}">
+         <li class="nav-item {{ Nav::isRoute('product') }}">
             <a class="nav-link collapsed" href="{{ route('blank') }}">
             <i class="bi bi-bag-dash"></i>
                 <span>{{ __('Produk BNI') }}</span>
