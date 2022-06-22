@@ -46,3 +46,7 @@ Route::get('/inspirasipost',[inspirasi_post_c::class,'index']);
 Route::get('/inspirasiuser', [InspirasiUserController::class,'index']);
 
 Route::get('/produk', [ProductController::class,'index']);
+
+Route::get('/createinspirasi', function () {
+    return view('inspirasi_post.create');
+})->name('blank');
