@@ -5,9 +5,10 @@
     <div class="card shadow mb-4">
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <h1>Tabel Inspirasi Post</h1>
-                    <tr>
+                <h1>Tabel Inspirasi Post</h1>
+                <table class="table table-bordered" id="myTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
                         <th>ID_Inspirasi</th>
                         <th>Posting Name</th>
                         <th>Category</th>
@@ -16,7 +17,10 @@
                         <th>Number of application</th>
                         <th>status</th>
                         <th>upload_date</th>
-                    </tr>
+                        <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
                     @foreach ($inspirasi_post as $w)
                         <tr onclick="sData(this)">
                             <td>{{ $w->ID_Inspirasi }}</td>
@@ -27,21 +31,47 @@
                             <td>{{ $w->application }}</td>
                             <td>{{ $w->status }}</td>
                             <td>{{ $w->upload_date }}</td>
+                            <td style="text-align:center; white-space:nowrap;"><a href="#"
+                                        class="btn btn-info btn-sm">Detail</a></td>
                         </tr>
                         </thead>
                     @endforeach
+                    </tbody>
                 </table>
             </div>
         </div>
     </div>
 @endsection
-@push('scripts')
-    <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+@push('js')
     <script>
         $(document).ready(function() {
-            $('#myTable').DataTable();
+            console.log('table')
+            window.setTimeout(
+                () => {
+                    $('#myTable').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: [{
+                                extend: 'excel',
+                                text: 'Download Filter Data',
+                                filename: 'Filter Inspirasi Post',
+                                title: null
+                            },
+                            {
+                                extend: 'excel',
+                                text: 'Download All Data',
+                                exportOptions: {
+                                    modifier: {
+                                        selected: null
+                                    }
+                                },
+                                filename: 'Inspirasi Post',
+                                title: null
+                            }
+                        ],
+                        select: true
+                    });
+                }, 500
+            )
         });
     </script>
 @endpush

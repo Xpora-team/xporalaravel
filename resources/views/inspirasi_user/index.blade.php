@@ -9,8 +9,8 @@
                 <table class="table table-bordered" id="myTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>User Id</th>
-                            <th>User Name</th>
+                            <th>User id</th>
+                            <th>User name</th>
                             <th>Level</th>
                             <th>Produk BNI</th>
                             <th>View</th>
@@ -23,7 +23,6 @@
                     <tbody>
                         @foreach ($inspirasi_user as $item)
                             <tr onclick="sData(this)">
-
                                 <td>{{ $item['user_id'] }}</td>
                                 <td>{{ $item['user_name'] }}</td>
                                 <td>{{ $item['level'] }}</td>
@@ -54,7 +53,7 @@
                         buttons: [{
                                 extend: 'excel',
                                 text: 'Download Filter Data',
-                                filename: 'Filter Produk BNI',
+                                filename: 'Filter Inspirasi User',
                                 title: null
                             },
                             {
@@ -65,7 +64,7 @@
                                         selected: null
                                     }
                                 },
-                                filename: 'inspirasi user',
+                                filename: 'Inspirasi User',
                                 title: null
                             }
                         ],
