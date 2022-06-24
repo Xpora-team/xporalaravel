@@ -5,7 +5,7 @@ use App\Http\Controllers\AkunAdmin_C;
 use App\Http\Controllers\inspirasi_post_c;
 use App\Http\Controllers\InspirasiUserController;
 use App\Http\Controllers\ProductController;
-
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,3 +50,9 @@ Route::get('/produk', [ProductController::class,'index']);
 Route::get('/createinspirasi', function () {
     return view('inspirasi_post.create');
 })->name('blank');
+
+Route::get('/search',[SearchController::class,'index']);
+
+
+Route::get('datatable', 'DataTableController@index');
+Route::get('get', 'DataTableController@get');
