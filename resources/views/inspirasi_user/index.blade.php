@@ -6,30 +6,33 @@
     <div class="card-body">
 <div class="table-responsive">
 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-    <h1>Tabel Inspirasi User</h1>
+<h1>Tabel Inspirasi User</h1>
     <tr>
+        <th>ID</th>
         <th>User ID</th>
-        <th>User Name</th>
+        <th>Username</th>
         <th>Level</th>
         <th>Produk BNI</th>
-        <th>Number of view</th>
-        <th>Number of application</th>
+        <th>View</th>
+        <th>Application</th>
         <th>Verification</th>
-        <th>Last Access</th>
-        <th rowspan="2" class="align-middle">Action</th>
+        <th>upload Date</th>
+        <th>Created At</th>
+        <th>Updated At</th>
     </tr>
-    @foreach ($data as $item)
+    @foreach ($inspirasi_user as $w)
         <tr onclick="sData(this)">
-        <td>{{ $item['user_id'] }}</td>
-        <td>{{ $item['user_name'] }}</td>
-        <td>{{ $item['level'] }}</td>
-        <td>{{ $item['produkbni'] }}</td>
-        <td>{{ $item['user_id'] }}</td>
-        <td>{{ $item['view'] }}</td>
-        <td>{{ $item['application'] }}</td>
-        <td>{{ $item['verification'] }}</td>
-        <td>{{ $item['date'] }}</td>
-        <td style="text-align:center; white-space:nowrap;"><a href="#" class="btn btn-info btn-sm">Detail</a></td>
+        <td>{{$w->id}}</td>
+        <td>{{$w->user_id}}</td>
+        <td>{{$w->user_name}}</td>
+        <td>{{$w->level}}</td>
+        <td>{{$w->produkbni}}</td>
+        <td>{{$w->view}}</td>
+        <td>{{$w->application}}</td>
+        <td>{{$w->verification}}</td>
+        <td>{{$w->upload_date}}</td>
+        <td>{{$w->created_at}}</td>
+        <td>{{$w->updated_at}}</td>
         </tr>
         </thead>
     @endforeach
