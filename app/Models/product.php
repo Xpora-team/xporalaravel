@@ -8,9 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class product extends Model
 {
     public $table = "product";
-<<<<<<< HEAD
-=======
     public $primaryKey = 'product_id';
     public $timestamps = true;
->>>>>>> origin/dinda
 }

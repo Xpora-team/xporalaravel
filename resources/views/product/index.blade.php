@@ -20,7 +20,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($data as $w)
+                        @foreach ($product as $w)
                             <tr onclick="sData(this)">
                                 <td>{{ $w->product_id }}</td>
                                 <td>{{ $w->kd_data_diri }}</td>
@@ -46,9 +46,24 @@
                 () => {
                     $('#myTable').DataTable({
                         dom: 'Bfrtip',
-                        buttons: [
-
-                        ],
+                        buttons: [{
+                            extend: 'excel',
+                            text: 'Download Filter Data',
+                            filename: 'Filter Produk BNI',
+                            title: null
+                        },
+                        {
+                            extend: 'excel',
+                            text: 'Download All Data',
+                            exportOptions: {
+                                modifier: {
+                                    selected: null
+                                }
+                            },
+                            filename: 'Produk BNI',
+                            title: null
+                        }
+                    ],
                         select: true
                     });
                 }, 500
