@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateInspirasiUsersTable extends Migration
+class CreateInspirasiUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class CreateInspirasiUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('inspirasi_users', function (Blueprint $table) {
-            $table->id();
+        Schema::create('inspirasi_user', function (Blueprint $table) {
+            $table->bigInteger('id')->primary();
             $table->string('user_id');
             $table->string('user_name');
             $table->string('level');
@@ -22,8 +22,9 @@ class CreateInspirasiUsersTable extends Migration
             $table->integer('view');
             $table->integer('application');
             $table->string('verification');
-            $table->date('date');
-            $table->timestamps();
+            $table->date('upload_date');
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
     }
 
@@ -34,6 +35,6 @@ class CreateInspirasiUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('inspirasi_users');
+        Schema::dropIfExists('inspirasi_user');
     }
 }

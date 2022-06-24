@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class inspirasi_user extends Model
 {
-    public $table = "inspirasi_users";
+    public $table = 'inspirasi_user';
+    public $primaryKey = 'id';
+    public $timestamps = true;
 }
