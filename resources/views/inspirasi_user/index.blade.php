@@ -21,7 +21,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($data as $item)
+                        @foreach ($inspirasi_user as $item)
                             <tr onclick="sData(this)">
 
                                 <td>{{ $item['user_id'] }}</td>
