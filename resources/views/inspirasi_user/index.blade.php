@@ -9,20 +9,20 @@
                 <table class="table table-bordered" id="myTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>ID Produk</th>
-                            <th>User ID</th>
-                            <th>Produk</th>
-                            <th>Min Pengajuan</th>
-                            <th>Realisasi Dana</th>
-                            <th>Status</th>
+                            <th>User id</th>
+                            <th>User name</th>
+                            <th>Level</th>
+                            <th>Produk BNI</th>
+                            <th>View</th>
+                            <th>Application</th>
+                            <th>Verification</th>
                             <th>Create Date</th>
-
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($data as $item)
                             <tr onclick="sData(this)">
-
                                 <td>{{ $item['user_id'] }}</td>
                                 <td>{{ $item['user_name'] }}</td>
                                 <td>{{ $item['level'] }}</td>
@@ -53,7 +53,7 @@
                         buttons: [{
                                 extend: 'excel',
                                 text: 'Download Filter Data',
-                                filename: 'Filter Produk BNI',
+                                filename: 'Filter Inspirasi User',
                                 title: null
                             },
                             {
@@ -64,7 +64,7 @@
                                         selected: null
                                     }
                                 },
-                                filename: 'Produk BNI',
+                                filename: 'Inspirasi User',
                                 title: null
                             }
                         ],
