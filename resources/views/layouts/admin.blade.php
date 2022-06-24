@@ -89,7 +89,7 @@
 
          <!-- Nav Item -->
          <li class="nav-item {{ Nav::isRoute('blank') }}">
-            <a class="nav-link collapsed" href="{{ route('blank') }}">
+            <a class="nav-link collapsed" href="/produk">
             <i class="bi bi-bag-dash"></i>
                 <span>{{ __('Produk BNI') }}</span>
             </a>
@@ -191,11 +191,20 @@
 </div>
 
 <!-- Scripts -->
-<script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
-<script src="{{ asset('js/script.js') }}"></script>
+
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+
+<script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>s
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
+<script src="https://cdn.datatables.net/select/1.4.0/js/dataTables.select.min.js"></script>
 @stack('js')
 </body>
 </html>

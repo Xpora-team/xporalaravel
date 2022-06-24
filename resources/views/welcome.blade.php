@@ -67,7 +67,7 @@
             .button {
                 font-size: 30px;
             }
-            
+
         </style>
     </head>
     <body>
@@ -79,7 +79,7 @@
                 <div class="content">
                 <img class="title m-b-md"src="/img/xpora.png" alt="" width="300" height="300">
                 </div>
-                
+
                 <div class="flex-center">
             @if (Route::has('login'))
                 <button class="button">
