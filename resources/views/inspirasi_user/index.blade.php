@@ -9,14 +9,15 @@
                 <table class="table table-bordered" id="myTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>ID Produk</th>
-                            <th>User ID</th>
-                            <th>Produk</th>
-                            <th>Min Pengajuan</th>
-                            <th>Realisasi Dana</th>
-                            <th>Status</th>
+                            <th>User Id</th>
+                            <th>User Name</th>
+                            <th>Level</th>
+                            <th>Produk BNI</th>
+                            <th>View</th>
+                            <th>Application</th>
+                            <th>Verification</th>
                             <th>Create Date</th>
-
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -64,7 +65,7 @@
                                         selected: null
                                     }
                                 },
-                                filename: 'Produk BNI',
+                                filename: 'inspirasi user',
                                 title: null
                             }
                         ],
