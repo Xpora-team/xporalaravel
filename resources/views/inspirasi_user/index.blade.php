@@ -5,8 +5,9 @@
 <div class="card shadow mb-4">
     <div class="card-body">
 <div class="table-responsive">
-<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 <h1>Tabel Inspirasi User</h1>
+<table class="table table-bordered" id="myTable" width="100%" cellspacing="0">
+    <thead>
     <tr>
         <th>ID</th>
         <th>User ID</th>
@@ -20,6 +21,8 @@
         <th>Created At</th>
         <th>Updated At</th>
     </tr>
+    </thead>
+    <tbody>
     @foreach ($inspirasi_user as $w)
         <tr onclick="sData(this)">
         <td>{{$w->id}}</td>
@@ -36,19 +39,45 @@
         </tr>
         </thead>
     @endforeach
+    </tbody>
     </table>
     </div>
     </div>
     </div>
     @endsection
-    @push('scripts')
-    <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
-<script>
-    $(document).ready( function () {
-        $('#myTable').DataTable();
-    } );
+    @push('js')
+
+    <script>
+            $(document).ready(function() {
+                console.log('table')
+                window.setTimeout(
+                    () => {
+                        $('#myTable').DataTable( {
+                            dom: 'Bfrtip',
+                            buttons: [
+                                {
+                                    extend: 'excel',
+                                    text: 'Excel Selected',
+                                    filename : 'inspirasiuserselected',
+                                    title : null
+                                },
+                                {
+                                    extend: 'excel',
+                                    text: 'Excel All',
+                                    exportOptions: {
+                                        modifier: {
+                                            selected: null
+                                        }
+                                    },
+                                    filename : 'inspirasiuser',
+                                    title : null
+                                }
+                            ],
+                            select : true
+                        });
+                    }, 500
+                )
+            } );
         </script>
     
     @endpush

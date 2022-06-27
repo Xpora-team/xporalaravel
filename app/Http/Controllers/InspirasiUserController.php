@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\inspirasi_user;
 use Illuminate\Http\Request;
+use App\Models\inspirasi_user;
+use App\Exports\InspirasiUserExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class InspirasiUserController extends Controller
 {
@@ -12,5 +14,9 @@ class InspirasiUserController extends Controller
         $inspirasi_user = inspirasi_user::all();
         
         return view('inspirasi_user.index',compact(['inspirasi_user']));
+    }
+
+    public function exportexcel(){
+        return Excel::download(new InspirasiUserExport, 'inspirasiuser.xlsx');
     }
 }

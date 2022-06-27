@@ -37,8 +37,19 @@ Route::middleware('auth')->group(function() {
     Route::resource('basic', BasicController::class);
 });
 
-Route::get('/akunadmin',[AkunAdmin_C::class,'index']);
+Route::get('/akunadmin',[AkunAdmin_C::class,'index'])->name('akunadmin');
+Route::get('/exportexcel', [AkunAdmin_C::class,'exportexcel']);
 
 Route::get('/inspirasipost',[inspirasi_post_c::class,'index']);
+Route::get('/exportexcel', [inspirasi_post_c::class,'exportexcel'])->name('inspirasipost');
 
 Route::get('/inspirasiuser', [InspirasiUserController::class,'index']);
+Route::get('/exportexcel', [InspirasiUserController::class,'exportexcel'])->name('inspirasiuser');
+
+Route::get('/createinspirasi', function () {
+    return view('inspirasi_post.create');
+})->name('blank');
+
+Route::post('/insertdata',[inspirasi_post_c::class,'insertdata'])->name('insertdata');
+
+Route::resource('posts', PostController::class);
