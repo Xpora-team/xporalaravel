@@ -26,6 +26,9 @@
     <!-- Favicon -->
     <link href="{{ asset('img/favicon.png') }}" rel="icon" type="image/png">
 
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
+
     @stack('css')
 </head>
 <body id="page-top">
@@ -45,10 +48,10 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item {{ Nav::isRoute('home') }}">
-            <a class="nav-link" href="{{ route('home') }}" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+            <a class="nav-link" href="{{ route('home') }}" data-toggle="collapse" data-target="#collapseUtilities2" aria-expanded="true" aria-controls="collapseUtilities">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>{{ __('Administrator') }}</span></a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                <div id="collapseUtilities2" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <a class="collapse-item" href="{{ route('basic.index') }}">Create Akun</a>
                     <a class="collapse-item" href="{{ route('profile') }}">Akun Info</a>
@@ -69,6 +72,14 @@
             <a class="nav-link collapsed" href="{{ route('home') }}">
             <i class="bi bi-house-door"></i>
                 <span>{{ __('Dashboard') }}</span>
+            </a>
+        </li>
+
+                 <!-- Nav Item -->
+                 <li class="nav-item {{ Nav::isRoute('akunadmin') }}">
+            <a class="nav-link collapsed" href="{{ route('akunadmin') }}">
+            <i class="bi bi-house-door"></i>
+                <span>{{ __('Akun Admin') }}</span>
             </a>
         </li>
 
@@ -124,8 +135,7 @@
                     <!-- Nav Item - User Information -->
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth::user()->name }}</span>
-                            <figure class="img-profile rounded-circle avatar font-weight-bold" data-initial="{{ Auth::user()->name[0] }}"></figure>
+
                         </a>
                         <!-- Dropdown - User Information -->
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">

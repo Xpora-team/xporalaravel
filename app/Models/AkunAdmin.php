@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class AkunAdmin extends Model
 {
-    use HasFactory;
+    //use HasFactory;
 
     public $table = 'akun_admin';
     public $primaryKey = 'nip';

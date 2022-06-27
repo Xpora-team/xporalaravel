@@ -8,51 +8,80 @@
 
     <div class="card">
         <div class="card-body">
-            <form action="{{ route('basic.store') }}" method="post">
+            <form action="/insertdata" method="post" enctype="multipart/form-data">
                 @csrf
 
                 <div class="form-group">
-                    <label for="name">Nama Kelas</label>
-                    <input type="text" class="form-control" name="name" id="name" placeholder="Nama Kelas"
+                    <label for="ID_Inspirasi">ID Inspirasi</label>
+                    <input type="text" class="form-control" name="ID_Inspirasi" id="ID_Inspirasi" placeholder="ID Inspirasi"
+                        autocomplete="off" value="{{ old('name') }}">
+
+                </div>
+
+
+                <div class="form-group">
+                    <label for="Nama_Kelas">Nama Kelas</label>
+                    <input type="text" class="form-control" name="Nama_Kelas" id="Nama_Kelas" placeholder="Nama Kelas"
                         autocomplete="off" value="{{ old('name') }}">
 
                 </div>
 
                 <div class="form-group">
-                    <label for="last_name">Kategori</label>
-                    <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Kategori"
+                    <label for="Category">Kategori</label>
+                    <input type="text" class="form-control" name="Category" id="Category" placeholder="Kategori"
                         autocomplete="off" value="{{ old('last_name') }}">
 
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Level</label>
-                    <input type="text" class="form-control" name="email" id="email" placeholder="Level"
+                    <label for="Level">Level</label>
+                    <input type="text" class="form-control" name="Level" id="Level" placeholder="Level"
                         autocomplete="off" value="{{ old('email') }}">
 
                 </div>
 
                 <div class="form-group">
-                    <label for="password">Application</label>
-                    <input type="text" class="form-control" name="password" id="password" placeholder="Application"
+                    <label for="view">Number of view</label>
+                    <input type="text" class="form-control" name="view" id="view" placeholder="Number of view"
                         autocomplete="off">
 
                 </div>
                 <div class="form-group">
-                    <label for="password">Foto</label>
-                    <input type="file" class="form-control" name="password" id="password" autocomplete="off">
+                    <label for="application">Number of application</label>
+                    <input type="text" class="form-control" name="application" id="application" placeholder="Number of application">
 
                 </div>
                 <div class="form-group">
-                    <label for="password">Deskripsi</label>
-                    <input type="text" class="form-control" name="password" id="password" placeholder="Deskripsi"
+                    <label for="status">Status</label>
+                    <input type="text" class="form-control" name="status" id="status" placeholder="Status"
+                        autocomplete="off">
+
+                </div>
+
+                <div class="form-group">
+                    <label for="upload_date">Upload Date</label>
+                    <input type="date" class="form-control" name="upload_date" id="upload_date" placeholder="Upload Date"
+                        autocomplete="off">
+
+                </div>
+
+                <div class="form-group">
+                    <label for="Photo">Photo</label>
+                    <input type="file" class="form-control" name="Photo" id="Photo" placeholder="Photo"
+                        autocomplete="off">
+
+                </div>
+
+                <div class="form-group">
+                    <label for="Deskripsi">Deskripsi</label>
+                    <input type="text" class="form-control" name="Deskripsi" id="Deskripsi" placeholder="Deskripsi"
                         autocomplete="off">
 
                 </div>
 
 
                 <button type="submit" class="btn btn-primary">Save</button>
-                <a href="{{ route('basic.index') }}" class="btn btn-default">Back to list</a>
+                <a href="inspirasipost" class="btn btn-default">Back to list</a>
 
             </form>
         </div>

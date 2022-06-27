@@ -5,9 +5,10 @@
 <div class="card shadow mb-4">
     <div class="card-body">
 <div class="table-responsive">
+<h1>Tabel Akun Admin</h1>
 <table class="table" id="myTable">
     <thead>
-<h1>Tabel Akun Admin</h1>
+
     <tr>
         <th>NIP</th>
         <th>username</th>
@@ -18,6 +19,8 @@
         <th>role</th>
         <th>create_date</th>
     </tr>
+    </thead>
+    <tbody>
     @foreach ($akun_admin as $w)
         <tr>
         <td>{{$w->nip}}</td>
@@ -31,6 +34,7 @@
         </tr>
         </thead>
     @endforeach
+    </tbody>
     </table>
     </div>
     </div>
@@ -39,14 +43,39 @@
     @endsection
     
 
-    @push('scripts')
-    <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
-<script>
-    $(document).ready( function () {
-        $('#myTable').DataTable();
-    } );
+    @push('js')
+
+        <script>
+            $(document).ready(function() {
+                console.log('table')
+                window.setTimeout(
+                    () => {
+                        $('#myTable').DataTable( {
+                            dom: 'Bfrtip',
+                            buttons: [
+                                {
+                                    extend: 'excel',
+                                    text: 'Excel Selected',
+                                    filename : 'akunadminselected',
+                                    title : null
+                                },
+                                {
+                                    extend: 'excel',
+                                    text: 'Excel All',
+                                    exportOptions: {
+                                        modifier: {
+                                            selected: null
+                                        }
+                                    },
+                                    filename : 'akunadmin',
+                                    title : null
+                                }
+                            ],
+                            select : true
+                        });
+                    }, 500
+                )
+            } );
         </script>
     
     @endpush
