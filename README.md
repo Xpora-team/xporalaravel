@@ -26,5 +26,6 @@ SB Admin 2 for Laravel 8.
 - Run `php artisan key:generate`
 - Set your database credentials in your `.env` file
 - Run migration `php artisan migrate`
-- Make something awesome!
 
+- `composer update --ignore-platform-reqs`
+- `composer install --ignore-platform-reqs`
