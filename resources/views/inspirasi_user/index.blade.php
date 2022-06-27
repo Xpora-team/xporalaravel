@@ -31,7 +31,7 @@
                                 <td>{{ $item['application'] }}</td>
                                 <td>{{ $item['verification'] }}</td>
                                 <td>{{ $item['date'] }}</td>
-                                <td><button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                                <                                <td><button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
                                     onclick="setSelectedId({{ $item['user_id'] }})">
                                     Detail
                                 </button></td>
@@ -129,7 +129,7 @@
                         buttons: [{
                                 extend: 'excel',
                                 text: 'Download Filter Data',
-                                filename: 'Filter Inspirasi User',
+                                filename: 'Filter Produk BNI',
                                 title: null
                             },
                             {
@@ -140,7 +140,7 @@
                                         selected: null
                                     }
                                 },
-                                filename: 'Inspirasi User',
+                                filename: 'Produk BNI',
                                 title: null
                             }
                         ],
