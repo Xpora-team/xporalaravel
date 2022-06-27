@@ -10,7 +10,7 @@ class InspirasiUserController extends Controller
     public function index()
     {
         $inspirasi_user = inspirasi_user::all();
-        
+
         return view('inspirasi_user.index',compact(['inspirasi_user']));
     }
 }
