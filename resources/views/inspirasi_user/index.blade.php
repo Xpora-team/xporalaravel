@@ -31,10 +31,10 @@
                                 <td>{{ $item['application'] }}</td>
                                 <td>{{ $item['verification'] }}</td>
                                 <td>{{ $item['date'] }}</td>
-                                <                                <td><button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
-                                    onclick="setSelectedId({{ $item['user_id'] }})">
-                                    Detail
-                                </button></td>
+                                <td><button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                                        onclick="setSelectedId({{ $item['user_id'] }})">
+                                        Detail
+                                    </button></td>
                             </tr>
                             </thead>
                         @endforeach
@@ -47,7 +47,7 @@
 
 
 {{-- <---Modal Detail--> --}}
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -108,13 +108,13 @@
                 if (inspirasi_user.user_id == selectedId) {
                     selectedData = inspirasi_user;
                     console.log(selectedData);
-                    document.getElementById('user_name').innerHTML=selectedData.user_name;
-                    document.getElementById('level').innerHTML=selectedData.level;
-                    document.getElementById('produkbni').innerHTML=selectedData.produkbni;
-                    document.getElementById('view').innerHTML=selectedData.view;
-                    document.getElementById('application').innerHTML=selectedData.application;
-                    document.getElementById('verification').innerHTML=selectedData.verification;
-                    document.getElementById('date').innerHTML=selectedData.create_date;
+                    document.getElementById('user_name').innerHTML = selectedData.user_name;
+                    document.getElementById('level').innerHTML = selectedData.level;
+                    document.getElementById('produkbni').innerHTML = selectedData.produkbni;
+                    document.getElementById('view').innerHTML = selectedData.view;
+                    document.getElementById('application').innerHTML = selectedData.application;
+                    document.getElementById('verification').innerHTML = selectedData.verification;
+                    document.getElementById('date').innerHTML = selectedData.create_date;
                     break;
                 }
             }
@@ -129,7 +129,7 @@
                         buttons: [{
                                 extend: 'excel',
                                 text: 'Download Filter Data',
-                                filename: 'Filter Produk BNI',
+                                filename: 'Filter Inspirasi User',
                                 title: null
                             },
                             {
@@ -140,7 +140,7 @@
                                         selected: null
                                     }
                                 },
-                                filename: 'Produk BNI',
+                                filename: 'Inspirasi User',
                                 title: null
                             }
                         ],
