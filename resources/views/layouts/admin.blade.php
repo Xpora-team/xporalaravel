@@ -43,6 +43,7 @@
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
 
+        @if (Auth::user()->role_as == 0)
         <!-- Nav Item - Dashboard -->
         <li class="nav-item {{ Nav::isRoute('home') }}">
             <a class="nav-link" href="{{ route('home') }}" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
@@ -55,6 +56,7 @@
                 </div>
             </div>
         </li>
+        @endif
 
         <!-- Divider -->
         <hr class="sidebar-divider">
