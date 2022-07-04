@@ -18,26 +18,23 @@ use App\Http\Controllers\SearchController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/profile', 'ProfileController@index')->name('profile');
-Route::put('/profile', 'ProfileController@update')->name('profile.update');
-
-Route::get('/about', function () {
-    return view('about');
-})->name('about');
 
 Route::get('/blank', function () {
     return view('blank');
 })->name('blank');
 
 Route::middleware('auth')->group(function() {
+    Route::get('/', 'HomeController@index')->name('home');
+    Route::get('/about', function () {
+        return view('about');
+    })->name('about');
+    
+
+    Route::get('/profile', 'ProfileController@index')->name('profile');
+    Route::put('/profile', 'ProfileController@update')->name('profile.update');
     Route::resource('basic', BasicController::class);
-});
+    Route::get('/inspirasipost',[inspirasi_post_c::class,'index']);
+    Route::get('/inspirasiuser', [InspirasiUserController::class,'index']);
 
 Route::get('/akunadmin',[AkunAdmin_C::class,'index'])->name('akunadmin');
 Route::get('/exportexcel', [AkunAdmin_C::class,'exportexcel']);
@@ -55,6 +52,11 @@ Route::get('/createinspirasi', function () {
 })->name('blank');
 
 Route::get('/search',[SearchController::class,'index']);
+});
+
+Route::get('/akunadmin',[AkunAdmin_C::class,'index']);
+
+
 
 
 Route::get('datatable', 'DataTableController@index');
