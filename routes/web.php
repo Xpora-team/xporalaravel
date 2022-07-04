@@ -62,3 +62,4 @@ Route::get('get', 'DataTableController@get');
 Route::post('/insertdata',[inspirasi_post_c::class,'insertdata'])->name('insertdata');
 
 Route::resource('posts', PostController::class);
+
