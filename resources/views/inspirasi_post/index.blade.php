@@ -102,7 +102,7 @@
 
 @push('js')
     <script>
-        var userId = <?= json_encode($inspirasi_post) ?>;
+        var postId = <?= json_encode($inspirasi_post) ?>;
         var selectedId = undefined;
         var selectedData = undefined;
 
