@@ -15,11 +15,15 @@ class BasicController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $page = $request->query('page', 1);
+        $pagesize = 10;
         return view('basic.list', [
             'title' => 'Akun Administrator',
-            'users' => User::paginate(10)
+            'page' => $page,
+            'pagesize' => $pagesize,
+            'users' => User::paginate($pagesize)
         ]);
     }
 
@@ -48,7 +52,8 @@ class BasicController extends Controller
             'name' => $request->name,
             'last_name' => $request->last_name,
             'email' => $request->email,
-            'password' => Hash::make($request->password)
+            'password' => Hash::make($request->password),
+            'role_as' => $request->role_as
         ]);
 
         return redirect()->route('basic.index')->with('message', 'User added successfully!');

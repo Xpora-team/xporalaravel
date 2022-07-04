@@ -20,6 +20,17 @@
                 </div>
 
                 <div class="form-group">
+                  <label for="role">Role</label>
+                  <select name="role_as" id="role">
+                    <option value="0">Master Admin</option>
+                    <option value="1">admin</option>
+                </select>
+                  @error('role_as')
+                    <span class="text-danger">{{ $message }}</span>
+                  @enderror
+                </div>
+
+                <div class="form-group">
                   <label for="last_name">Last Name</label>
                   <input type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" id="last_name" placeholder="Last name" autocomplete="off" value="{{ old('last_name') }}">
                   @error('last_name')

@@ -19,6 +19,7 @@
             <tr>
                 <th>No</th>
                 <th>Full Name</th>
+                <th>Role</th>
                 <th>Email</th>
                 <th>#</th>
             </tr>
@@ -26,8 +27,9 @@
         <tbody>
             @foreach ($users as $user)
                 <tr>
-                    <td scope="row">{{ $loop->iteration }}</td>
+                    <td scope="row">{{ $loop->iteration +($page-1) * $pagesize}}</td>
                     <td>{{ $user->full_name }}</td>
+                    <td>{{ $user->role_as == 0 ? 'master admin' : 'admin' }}</td>
                     <td>{{ $user->email }}</td>
                     <td>
                         <div class="d-flex">
