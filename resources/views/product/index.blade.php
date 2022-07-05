@@ -5,7 +5,7 @@
 <div class="card shadow mb-4">
     <div class="card-body">
         <div class="table-responsive">
-            <h1>Tabel Inspirasi User</h1>
+            <h1>Tabel Produk BNI</h1>
             <table class="table table-bordered" id="myTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
